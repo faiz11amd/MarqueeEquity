@@ -1,0 +1,53 @@
+
+
+<section [formGroup]="formData" class="container app text-center mt-5">
+<h1 class="text-center">Marquee Equity Task ( By Using:- Angular 10, Angular Material, Bootstrap, FontAwesome, NodeJS API's, MongoDB)</h1>
+
+    <div (clickOutside)="onClickedOutside($event)">
+        <div>
+            <div class="DateTime">
+                <span class="DateTime-Date">{{ today | date:'MMM d, EEEE' }}</span>
+                <span class="DateTime-Time">{{ today | date:'hh:mm:ss' }}</span>
+                <span *ngIf="today?.getHours() < 12" class="DateTime-Time">AM</span>
+                <span *ngIf="today?.getHours() >= 12" class="DateTime-Time">PM</span>
+            </div>
+            <input (keyup)="searchCList()" (focus)="showCList()" formControlName="newTodo"
+                (keyup.enter)="addTodoTask($event)" type="text" class="textbox"
+                placeholder="Add your tasks for the day...">
+            <button class="btn btn-primary ml-4 fa fa-search"></button>
+
+        </div>
+        <div>
+            <ul class="todolist todolist-Only">
+                <ng-container *ngIf="showList">
+                    <li draggable="false" *ngFor="let company of taskList; let i=index"
+                        (click)="selectedCompany(company?.companyName)" class="todo pl-5">
+                        <!-- <span class="todo-check"><i class=""></i></span> -->
+                        <p class="todo-task text-left">{{ company?.companyName }}</p>
+                        <!-- <p class="todo-task">{{ company?.cin }}</p> -->
+                        <button (click)="editTodo()" class="todo-edit">{{ company?.cin}}</button>
+                        <span class="todo-createdOn">8 days ago</span>
+                        <button (click)="deleteTodo(i)" class="todo-delete fa fa-close"></button>
+
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <div>
+            <button (click)="addCompany()" class="btn btn-primary mb-3">Add Company</button>
+        </div>
+        <ng-container *ngIf="addfield">
+            <div class="d-flex justify-content-end mb-4">
+                <i (click)="close()" class="fa fa-close fa-2x"></i>
+            </div>
+            <input formControlName="companyName" type="text" placeholder="Enter company name" class="form-control mb-3">
+            <input formControlName="cin" type="number" placeholder="Enter cin number" class="form-control mb-3">
+            <button (click)="navToClist()" class="btn btn-primary" [disabled]="!formData?.valid">Submit</button>
+        </ng-container>
+    </div>
+
+
+</section>

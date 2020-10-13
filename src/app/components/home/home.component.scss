@@ -1,0 +1,166 @@
+.app {
+    padding: 0 0 2em;
+    width: 600px;
+    margin: auto;
+}
+
+.DateTime {
+    margin: 40px 0;
+    color: #333;
+
+    .DateTime-Date {
+        display: block;
+        font-size: 20px;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .DateTime-Time {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        margin-right: 8px;
+    }
+}
+
+.textbox {
+    height: 50px;
+    border: 0;
+    // width: 100%;
+    width: 89%;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    color: #333;
+    outline: none;
+    font-size: 15px;
+    padding: 0 15px;
+    font-family: inherit;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+    // max-height: 50px;
+    border: 1px solid #eee;
+    border-top: 0;
+    color: #333;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.todo:hover {
+    background: #fafafa;
+}
+
+.todolist {
+    min-height: 60px;
+    width: 89%;
+}
+
+.todolist-Only li:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.todo-check {
+    padding: 0 1em;
+    width: 50px;
+    height: 50px;
+    line-height: 3.7;
+
+    i {
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
+
+.todo-checked {
+
+    i {
+        background: #27ae60;
+    }
+
+}
+
+.todo-checked  {
+    text-decoration: line-through;
+    color: #ccc !important;
+}
+
+.todo-edit--onChecked {
+    display: none !important;
+}
+
+.todo-task {
+    flex: 1;
+    padding: 13px 1em 13px 0;
+    // padding: 30px 1em 13px 0;
+    margin-bottom: 0px;
+    line-height: 1.5;
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.todo-edit {
+    border: none;
+    background: none;
+    margin: 0 1em;
+    font-size: 16px;
+    color: #ccc;
+    display: none;
+
+}
+
+.todo:hover .todo-edit {
+    display: block;
+}
+
+.todo-edit:hover {
+    color: #27ae60;
+}
+
+.todo-delete {
+    border: none;
+    background: none;
+    margin: 0 1em;
+    font-size: 16px;
+    color: #ccc;
+    display: none;
+}
+
+.todo:hover .todo-delete {
+    display: block;
+}
+
+.todo-delete:hover {
+    color: #e74c3c;
+}
+
+.todo-createdOn {
+    position: absolute;
+    right: -140px;
+    text-align: left;
+    font-size: 12px;
+    width: 120px;
+    display: block;
+    color: #9c8e6a;
+    display: none;
+}
+
+.todo:hover .todo-createdOn {
+    display: block;
+}
